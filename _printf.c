@@ -1,4 +1,4 @@
-#include "_printf.h"
+#include "main.h"
 
 /**
  * _printf - format character string.
@@ -11,7 +11,6 @@
 int _printf(const char *format, ...)
 {
 	int i, count = 0, found = 0;
-	char *str;
 	va_list data;
 
 	va_start(data, format);
