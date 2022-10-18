@@ -1,4 +1,4 @@
-#include "main.h"
+#include <unistd.h>
 
 /**
  * _putchar - function to print a character
@@ -6,7 +6,7 @@
  *
  *
  * Return:Always 1 if successfully
- * else return -1 if unsuccessful
+ * else return 0 if unsuccessful
  */
 int _putchar(char c)
 {
