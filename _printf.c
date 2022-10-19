@@ -13,14 +13,13 @@ int _printf(const char *format, ...)
 	va_list data;
 
 	if (format == NULL)
-		return -1;
+		return (-1);
 	va_start(data, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		if (format[i] != '%' && found == 0)
 		{
-			count += _putchar(format[i]);
-			found = 0;
+			count += _putchar(format[i]), found = 0;
 		}
 		else
 		{
@@ -44,9 +43,7 @@ int _printf(const char *format, ...)
 				found = 0;
 			}
 			else
-			{
 				found = 1;
-			}
 		}
 	}
 	va_end(data);
