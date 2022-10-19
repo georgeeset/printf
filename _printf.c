@@ -37,7 +37,6 @@ int _printf(const char *format, ...)
 					count += _putchar(va_arg(data, int));
 					break;
 				default:
-					count += _putchar(format[i-1]);
 					count += _putchar(format[i]);
 				}
 				found = 0;
