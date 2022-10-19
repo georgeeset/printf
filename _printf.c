@@ -10,25 +10,27 @@
  */
 int _printf(const char *format, ...)
 {
-	int i, count = 0, found = 0;
+	int count = 0, *i, *found;
 	va_list data;
 
+	i = (int *) malloc(sizeof(int));
+	found = (int *) calloc(1, sizeof(int));
 	va_start(data, format);
-	for (i = 0; format[i] != '\0'; i++)
+	for (*i = 0; format[*i] != '\0'; (*i)++)
 	{
-		if (format[i] != '%' && found == 0)
+		if (format[*i] != '%' && *found == 0)
 		{
-			count += _putchar(format[i]);
-			found = 0;
+			count += _putchar(format[*i]);
+			*found = 0;
 		}
 		else
 		{
-			if (found == 1)
+			if (*found == 1)
 			{
-				switch (format[i])
+				switch (format[*i])
 				{
 				case '%':
-					count += _putchar(format[i]);
+					count += _putchar(format[*i]);
 					break;
 				case 's':
 					count += _print_string(va_arg(data, char *));
@@ -38,16 +40,18 @@ int _printf(const char *format, ...)
 					break;
 				default:
 					count += _putchar('%');
-					count += _putchar(format[i]);
+					count += _putchar(format[*i]);
 				}
-				found = 0;
+				*found = 0;
 			}
 			else
 			{
-				found = 1;
+				*found = 1;
 			}
 		}
 	}
 	va_end(data);
+	free(i);
+	free(found);
 	return (count);
 }
