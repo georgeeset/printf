@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 	int i, count = 0, found = 0;
 	va_list data;
 
+	if (! format)
+		return 0;
 	va_start(data, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
