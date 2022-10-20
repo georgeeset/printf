@@ -10,10 +10,18 @@
 int _print_string(char *data)
 {
 	int i;
+	char noVal[6] = "(null)"; 
 
-	for (i = 0; data[i] != '\0'; i++)
+	if (data == NULL)
 	{
-		_putchar(data[i]);
+		for (i = 0; i < 6; i++)
+			_putchar(noVal[i]);
 	}
+	else
+	{
+		for (i = 0; data[i] != '\0'; i++)
+			_putchar(data[i]);
+	}
+
 	return (i);
 }
