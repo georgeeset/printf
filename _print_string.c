@@ -10,7 +10,7 @@
 int _print_string(char *data)
 {
 	int i;
-	char noVal[6] = "(null)"; 
+	char noVal[6] = "(null)";
 
 	if (data == NULL)
 	{
