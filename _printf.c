@@ -25,25 +25,15 @@ int _printf(const char *format, ...)
 		{
 			if (found == 1)
 			{
-				switch (format[i])
-				{
-				case '%':
-					count += _putchar(format[i]);
-					break;
-				case 's':
-					count += _print_string(va_arg(data, char *));
-					break;
-				case 'c':
-					count += _putchar(va_arg(data, int));
-					break;
-				default:
-					count += _putchar('%');
-					count += _putchar(format[i]);
-				}
+				count += switcher(data, format, i);
 				found = 0;
 			}
 			else
+			{
+				if (format[i + 1] == '\0')
+					return (-1);
 				found = 1;
+			}
 		}
 	}
 	va_end(data);
