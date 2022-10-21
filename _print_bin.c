@@ -10,7 +10,10 @@
 void _pb(unsigned int num, int *count)
 {
 	if (num == 0)
+	{
+		_putchar('0');
 		return;
+	}
 
 	*count += 1;
 	_pb(num / 2, count);
