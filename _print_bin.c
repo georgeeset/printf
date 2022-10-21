@@ -30,5 +30,5 @@ int _print_bin(unsigned int num)
 	_pb(num, &count);
 	if (count == 0)
 		return (1);
-	return count;
+	return (count);
 }
