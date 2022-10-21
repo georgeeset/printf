@@ -8,4 +8,6 @@ int _putchar(char c);
 int _print_string(char *data);
 int _printf(const char *format, ...);
 int switcher(va_list data, const char *format, int i);
+int _print_bin(unsigned int num);
+
 #endif

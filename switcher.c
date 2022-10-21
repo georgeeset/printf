@@ -21,6 +21,9 @@ int switcher(va_list data, const char *format, int i)
 	case 'c':
 		count += _putchar(va_arg(data, int));
 		break;
+	case 'b':
+		count += _print_bin(va_arg(data, unsigned int));
+		break;
 	default:
 		count += _putchar('%');
 		count += _putchar(format[i]);
