@@ -10,10 +10,7 @@
 void _pb(unsigned int num, int *count)
 {
 	if (num == 0)
-	{
-		_putchar('0');
 		return;
-	}
 
 	*count += 1;
 	_pb(num / 2, count);
@@ -32,6 +29,9 @@ int _print_bin(unsigned int num)
 
 	_pb(num, &count);
 	if (count == 0)
+	{
+		_putchar('0');
 		return (1);
+	}
 	return (count);
 }
